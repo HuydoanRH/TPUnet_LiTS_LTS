@@ -9,21 +9,18 @@ import random
 import skimage.transform  as sktf
 import glob
 import matplotlib.pyplot as plt
-
 class LITS_slicing_train_val:
-    def __init__(self, raw_dataset_root_path,slice_dataset_root_path):
+    def __init__(self, raw_dataset_root_path,slice_dataset_root_path, args):
         self.raw_dataset_root_path = raw_dataset_root_path
         self.slice_dataset_root_path = slice_dataset_root_path
-        self.valid_rate = 0.2
-        self.fillters = 20
+        self.valid_rate = args.valid_rate
+        self.fillters = args.fillters
         self.rs_shape = (128,128,1)
         self.tumor_label = True
-        self.upper = 200
-        self.lower = -200
-        self.xy_down_scale = 0.25
-        self.slice_down_scale = 1
-        self.expand_slice = 20
-        self.size = 48
+        self.upper = args.upper
+        self.lower = args.lower
+        self.expand_slice = args.expand_slice
+        self.size = args.size
 
     def slice_data(self):
         if not os.path.exists(self.slice_dataset_root_path):
@@ -86,14 +83,10 @@ class LITS_slicing_train_val:
         new_ct = sitk.GetImageFromArray(ct_array)
         new_ct.SetDirection(ct.GetDirection())
         new_ct.SetOrigin(ct.GetOrigin())
-        # print(ct.GetSpacing())
-        # new_ct.SetSpacing((ct.GetSpacing()[0] * int(1 / self.xy_down_scale), ct.GetSpacing()[1] * int(1 / self.xy_down_scale), self.slice_down_scale))
-        # print(new_ct.GetSpacing())
 
         new_seg = sitk.GetImageFromArray(seg_array)
         new_seg.SetDirection(ct.GetDirection())
         new_seg.SetOrigin(ct.GetOrigin())
-        # new_seg.SetSpacing((ct.GetSpacing()[0] * int(1 / self.xy_down_scale), ct.GetSpacing()[1] * int(1 / self.xy_down_scale), self.slice_down_scale))
         sum_tumor_pixel = 0
         num_slice = 0
         ct_array = sitk.GetArrayFromImage(new_ct)
@@ -136,9 +129,9 @@ class LITS_slicing_train_val:
         print('the sliced total numbers of samples label is :', slice_num)
 
 if __name__ == '__main__':
-    raw_dataset_path = './dataset/raw_dataset/train/'
-    fixed_dataset_path = './dataset/fixed_dataset/'
+    raw_dataset_path = './raw_dataset/train/'
+    fixed_dataset_path = './fixed_dataset/'
     args = config.args 
-    tool = LITS_slicing_train_val(raw_dataset_path,fixed_dataset_path)
+    tool = LITS_slicing_train_val(raw_dataset_path,fixed_dataset_path, args)
     tool.slice_data()
     tool.count_num_slice()
