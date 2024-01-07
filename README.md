@@ -34,11 +34,25 @@ raw_dataset:
     │       ├── segmentation-1.nii
     |       |—— ...
 ```
-3. Change root path của volume data và segmentation label ở file: `./Dataset/dataset_preparation.py`
+3. Change root path của volume data và segmentation label ở file: `./Dataset/config.py`
 ```
-    row_dataset_path = './raw_dataset/train/'  # path của origin dataset
-    fixed_dataset_path = './fixed_data/'  # path của fixed(preprocessed) dataset
+    parser.add_argument('--dataset_fixed_path',default = './Dataset/fixed_dataset/',help='fixed trainset root path')
+    parser.add_argument('--dataset_raw_path',default = './Dataset/raw_dataset/train/',help='raw dataset path')
 ```
-4. Chỉnh các thông số xử lý data nếu cần ở file `./Dataset/config.py`
+4. Run `python ./Dataset/dataset_preparation.py`. Nếu không raise lỗi gì thì kết quả được thể hiện ở `./Dataset/fixed_dataset/`
+```
+│—— train_path_list.txt
+│—— val_path_list.txt
+│
+|—— ct
+│       volume-0_slice_01.npy
+│       volume-0_slice_02.npy
+│       ...
+└─ label
+        segmentation-0_slice_01.npy
+        segmentation-0_slice_02.npy
+        ...
+```  
 ### 2) Training TPUNet:
+
 ### 3) Evaluate TPUNet

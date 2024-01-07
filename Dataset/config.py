@@ -12,9 +12,9 @@ parser.add_argument('--fillters', type=int, default=20, help='number of tumor pi
 parser.add_argument('--valid_rate', type=float, default=0.2, help='')
 
 # data in/out and dataset
-parser.add_argument('--dataset_path',default = './dataset/fixed_dataset/',help='fixed trainset root path')
-parser.add_argument('--test_data_path',default = './dataset/raw_dataset/test/',help='Testset path')
+parser.add_argument('--dataset_fixed_path',default = './Dataset/fixed_dataset/',help='fixed trainset root path')
+parser.add_argument('--dataset_raw_path',default = './Dataset/raw_dataset/train/',help='raw dataset path')
 parser.add_argument('--save',default='TP_Unet',help='save path of trained model')
-parser.add_argument('--batch_size', type=list, default=2,help='batch size of trainset')
+parser.add_argument('--batch_size', type=list, default=16,help='batch size of trainset')
 
 args = parser.parse_args()

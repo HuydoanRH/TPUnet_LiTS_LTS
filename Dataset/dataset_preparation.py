@@ -129,9 +129,9 @@ class LITS_slicing_train_val:
         print('the sliced total numbers of samples label is :', slice_num)
 
 if __name__ == '__main__':
-    raw_dataset_path = './raw_dataset/train/'
-    fixed_dataset_path = './fixed_dataset/'
     args = config.args 
+    raw_dataset_path = args.dataset_raw_path
+    fixed_dataset_path = args.dataset_fixed_path
     tool = LITS_slicing_train_val(raw_dataset_path,fixed_dataset_path, args)
     tool.slice_data()
     tool.count_num_slice()
