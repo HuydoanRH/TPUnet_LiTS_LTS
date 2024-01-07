@@ -3,10 +3,10 @@
 ## Dataset
 Tập dữ liệu LiTS2017 là một tập dữ liệu mở được sử dụng cho cuộc thi "Liver Tumor Segmentation Challenge", có thể truy cập thông qua LiTS Challenge website: https://competitions.codalab.org/competitions/17094. Tập dữ liệu này bao gồm 201 3D volumes CT ổ bụng từ 100 bệnh nhân, trong đó có 194 volumes có chứa khối u. Các volumes CT có kích thước ảnh 512 x 512, và có số lượng lát cắt khác nhau. Trong số 200 3D volumes CT, có 131 volumes có nhãn, dùng để huấn luyện và 70 volumes không có nhãn, dùng để kiểm thử. Chỉ có những người tổ chức cuộc thi mới có thể truy cập được vào nhãn của các volumes kiểm thử.
 ## Thông tin tổng quan dataset
-<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/Image/LiTS_Dataset.png"alt="LiTS Dataset Overview"></div> 
+<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/blob/main/Image/LiTS_Dataset.png"alt="LiTS Dataset Overview"></div> 
 
 ## Một số kết quả sau khi xử lý dataset
-<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/Image/livertumorVisual.png"alt="LiTS Dataset Overview"></div>  
+<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/blob/main/Image/livertumorVisual.png"alt="LiTS Dataset result"></div>  
   
 ## Usage
 ### 1) LITS2017 dataset preprocessing:
