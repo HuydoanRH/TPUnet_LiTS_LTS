@@ -53,6 +53,13 @@ raw_dataset:
         segmentation-0_slice_02.npy
         ...
 ```  
-### 2) Training TPUNet:
+## 2) Training TPUNet:
+### Kiến trúc của TPUNet:
+<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/blob/main/Image/TPUNet.png"alt="LiTS Dataset result"></div>  
 
-### 3) Evaluate TPUNet
+### Training:
+Refer file ở  `./training/*.ipynb`
+## 3) Evaluate TPUNet
+Refer file ở  `./evaluate/Evaluate.ipynb`
+## 4) Visualize Output
+Refer file ở  `./evaluate/Evaluate.ipynb`
