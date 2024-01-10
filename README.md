@@ -59,7 +59,18 @@ raw_dataset:
 
 ### Training:
 Refer file ở  `./training/*.ipynb`
+#### Tổng hợp kết quả huấn luyện các mô hình phân đoạn khối u gan.
+Hình dưới là đồ thị so sánh sự về mức độ và tốc độ hội tụ trong quá trình huấn luyện các mô hình phân đoạn khối u gan trên tập LiTS2017. Vị trí biễu diễn trên cùng bên trái, trên cùng bên phải, dưới cùng bên trái biễu diễn tương ứng cho việc huấn luyện phân đoạn khối u gan cho các mô hình sử dụng kiến trúc U-Net, Tritension U-Net, TP-Unet. Hình dưới cùng bên phải là đồ thì biễu diễn diễn biến thay đổi giá trị độ đo DSC trên tập xác thực trong quá trình huấn luyện ba mô hình (màu xanh dương biễu diễn cho U-Net, cam cho Tritension U-Net và xanh lá cây cho TP-UNet).
+<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/blob/main/Image/TrainingChart.png"alt=" Kết quả huấn luyện các mô hình"></div>  
+
 ## 3) Evaluate TPUNet
 Refer file ở  `./evaluate/Evaluate.ipynb`
+### Evaluate phân đoạn gan.
+<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/blob/main/Image/liverEvaluate.png"alt=" Kết quả đánh giá phân đoạn gan"></div>  
+
+### Evaluate phân đoạn u gan.
+<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/blob/main/Image/liverTumorEvaluate.png"alt=" Kết quả đánh giá phân đoạn u gan"></div>
+
 ## 4) Visualize Output
 Refer file ở  `./evaluate/Evaluate.ipynb`
+<div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/blob/main/Image/Livertumor_VisulizePixel.png"alt="Một số kết quả phân đoạn u gan"></div>
