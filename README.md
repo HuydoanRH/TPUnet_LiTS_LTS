@@ -73,4 +73,7 @@ Refer file ở  `./evaluate/Evaluate.ipynb`
 
 ## 4) Visualize Output
 Refer file ở  `./evaluate/Evaluate.ipynb`
+
+Hình dưới So sánh sự khác nhau trên đơn vị pixel giữa các phương pháp tiếp cận khác nhau trên tập LiST2017. Hàng đầu tiên là kết quả của mô hình U-Net, hàng thứ 2 là Tritension U-Net và hàng cuối cùng là kết quả của TP-Unet. Ở cột Overlap, vùng màu vàng thể hiện sự giao nhau giữa label và predict mask, trong khi đó màu xanh đại diện cho pixel mà mô hình dự đoán hông phải là khối u, trong khi label thể hiện là khối u, và ngược lại, màu đỏ thể hiện cho việc mô hình đang dự đoán pixel đó là khối u, trong khi đó là pixel của tế bào bình thường.
+
 <div align=center><img src="https://github.com/HuydoanRH/TPUnet_LiTS_LTS/blob/main/Image/Livertumor_VisulizePixel.png"alt="Một số kết quả phân đoạn u gan"></div>
